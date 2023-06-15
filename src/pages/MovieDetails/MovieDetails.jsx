@@ -39,11 +39,11 @@ const useFetchMovie = () => {
 
 const MovieDetails = () => {
   const { movie, movieId, location } = useFetchMovie();
+
   return (
     <main>
-      <Link to={location?.state?.from ?? '/movies'}>Go Back</Link>
-      <MovieCards movie={movie} />
-
+      <Link to={location?.state?.from ?? '/'}>Go Back</Link>
+      <MovieCards movie={movie} movieId={movieId} location={location}/>
       <div className={css.genresLink}>
         <p>Additional infirmation</p>
         <li>

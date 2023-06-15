@@ -1,7 +1,10 @@
+import { Link, Outlet } from 'react-router-dom';
 import css from './MovieCards.module.css';
 
-const MovieCards = ({movie}) => {
+import PropTypes from 'prop-types';
 
+const MovieCards = ({ movie, movieId, location }) => {
+  console.log(location);
   return (
     <>
       {movie && (
@@ -38,8 +41,23 @@ const MovieCards = ({movie}) => {
           </div>
         </ul>
       )}
+      {/* <div className={css.genresLink}>
+        <p>Additional infirmation</p>
+        <li>
+          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+        </li>
+        <li>
+          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+        </li>
+      </div>
+
+      <Outlet /> */}
     </>
   );
 };
 
 export default MovieCards;
+
+// MovieCards.propTypes = {
+//   movie: PropTypes.array(PropTypes.object).isRequired,
+// };

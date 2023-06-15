@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import css from './MoviesForm.module.css';
 
+import PropTypes from 'prop-types';
+
 const MoviesForm = ({ movies, location, onSubmit, onChange }) => {
   return (
     <>
@@ -34,3 +36,10 @@ const MoviesForm = ({ movies, location, onSubmit, onChange }) => {
 };
 
 export default MoviesForm;
+
+// MoviesForm.propTypes = {
+//   movies: PropTypes.array(PropTypes.object).isRequired,
+//   location: PropTypes.object.isRequired,
+//   onSubmit: PropTypes.func.isRequired,
+//   onChange: PropTypes.func.isRequired,
+// };

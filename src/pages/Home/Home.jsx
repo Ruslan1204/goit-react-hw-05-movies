@@ -26,6 +26,7 @@ const useFetchMovies = () => {
 
 const Home = () => {
   const { movies, location } = useFetchMovies();
+  console.log(location)
   return (
     <main>
       <ol>

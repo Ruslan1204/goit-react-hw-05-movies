@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import css from './HomeList.module.css';
 
+import PropTypes from 'prop-types';
+
 const HomeList = ({ movies, location }) => {
 
   return (
@@ -21,3 +23,8 @@ const HomeList = ({ movies, location }) => {
 };
 
 export default HomeList;
+
+// HomeList.propTypes ={
+//   movies: PropTypes.array(PropTypes.object).isRequired,
+//   location:PropTypes.object.isRequired,
+// }

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { getMoviesSearch } from '../../services/MoviesApi';
 import { useLocation, useSearchParams } from 'react-router-dom';
-import MoviesForm from 'components/MoviesForm/MoviesForm'
+import MoviesForm from 'components/MoviesForm/MoviesForm';
 
 const useFetchSearchMovies = () => {
   const location = useLocation();
@@ -11,10 +11,9 @@ const useFetchSearchMovies = () => {
   const nameSearch = searchParams.get('nameSearch');
 
   useEffect(() => {
-
-    if (nameSearch === '' || nameSearch === null){
+    if (nameSearch === '' || nameSearch === null) {
       return;
-    }else{
+    } else {
       async function fetchSearchMovies() {
         try {
           const data = await getMoviesSearch(nameSearch);
@@ -25,9 +24,7 @@ const useFetchSearchMovies = () => {
       }
       fetchSearchMovies();
     }
-
   }, [nameSearch]);
-
 
   const handleChangeSearc = evt => {
     const { value } = evt.target;
@@ -63,14 +60,16 @@ const useFetchSearchMovies = () => {
 };
 
 const Movies = () => {
-  const {  movies, location, handleChangeSearc, handleSubmit } =
+  const { movies, location, handleChangeSearc, handleSubmit } =
     useFetchSearchMovies();
 
   return (
-
-  
-    <MoviesForm movies={movies} location={location} onSubmit={handleSubmit} onChange={handleChangeSearc}/>
-
+      <MoviesForm
+        movies={movies}
+        location={location}
+        onSubmit={handleSubmit}
+        onChange={handleChangeSearc}
+      />
   );
 };
 

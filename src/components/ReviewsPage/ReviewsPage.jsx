@@ -1,5 +1,6 @@
-const ReviewsPage = ({ reviews }) => {
+import PropTypes from 'prop-types';
 
+const ReviewsPage = ({ reviews }) => {
   return (
     <>
       {reviews.map(review => {
@@ -10,10 +11,13 @@ const ReviewsPage = ({ reviews }) => {
           </li>
         );
       })}
-      {reviews && <p>We don't have any reviews for this movie.</p>} 
+      {reviews && <p>We don't have any reviews for this movie.</p>}
     </>
   );
 };
 
 export default ReviewsPage;
 
+// ReviewsPage.propTypes = {
+//   reviews: PropTypes.array(PropTypes.object).isRequired,
+// };

@@ -1,5 +1,7 @@
 import css from './CastActors.module.css'
 
+import PropTypes from 'prop-types';
+
 const CastActors = ({actors}) => {
 
   return (
@@ -22,3 +24,7 @@ const CastActors = ({actors}) => {
 };
 
 export default CastActors;
+
+// CastActors.propTypes ={
+//   actors: PropTypes.array(PropTypes.object).isRequired
+// }

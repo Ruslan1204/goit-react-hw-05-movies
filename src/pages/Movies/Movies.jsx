@@ -1,23 +1,33 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getMoviesSearch } from '../../services/MoviesApi';
-import { Link, useLocation, useSearchParams } from 'react-router-dom';
-// import { getMoviesById } from '../../services/MoviesApi';
+import { useLocation, useSearchParams } from 'react-router-dom';
+import MoviesForm from 'components/MoviesForm/MoviesForm'
 
 const useFetchSearchMovies = () => {
   const location = useLocation();
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState('');
   const [searchParams, setSearchParams] = useSearchParams();
+  const nameSearch = searchParams.get('nameSearch');
 
-  console.log(searchParams)
-  async function fetchSearchMovies(search) {
-    try {
-      const data = await getMoviesSearch(search);
-      setMovies(data);
-    } catch (error) {
-      console.log(error);
+  useEffect(() => {
+
+    if (nameSearch === '' || nameSearch === null){
+      return;
+    }else{
+      async function fetchSearchMovies() {
+        try {
+          const data = await getMoviesSearch(nameSearch);
+          setMovies(data);
+        } catch (error) {
+          console.log(error);
+        }
+      }
+      fetchSearchMovies();
     }
-  }
+
+  }, [nameSearch]);
+
 
   const handleChangeSearc = evt => {
     const { value } = evt.target;
@@ -27,44 +37,40 @@ const useFetchSearchMovies = () => {
 
   const handleSubmit = evt => {
     evt.preventDefault();
+    const form = evt.currentTarget;
 
-    setSearchParams({ search: evt.currentTarget.elements.search.value });
+    setSearchParams({ nameSearch: form.elements.nameSearch.value });
 
-    if (search.trim() === '') {
-      return;
-    }
+    form.reset();
 
-    fetchSearchMovies(search);
+    // if (nameSearch.trim() === '') {
+    //   return;
+    // }
 
-    setSearch('');
+    // fetchSearchMovies(search);
+
+    // setSearch('');
   };
 
-  return { search, movies, location, handleChangeSearc, handleSubmit };
+  return {
+    nameSearch,
+    search,
+    movies,
+    location,
+    handleChangeSearc,
+    handleSubmit,
+  };
 };
 
 const Movies = () => {
-  const { search, movies, location, handleChangeSearc, handleSubmit } =
+  const {  movies, location, handleChangeSearc, handleSubmit } =
     useFetchSearchMovies();
-  console.log('Movies', location);
+
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          onChange={handleChangeSearc}
-          name="search"
-          value={search}
-        />
-        <button type="submit">Search</button>
-      </form>
-      <ol>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`} state={{ from: location }}>{movie.title}</Link>
-          </li>
-        ))}
-      </ol>
-    </>
+
+  
+    <MoviesForm movies={movies} location={location} onSubmit={handleSubmit} onChange={handleChangeSearc}/>
+
   );
 };
 

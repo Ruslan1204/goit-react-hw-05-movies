@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import {  useLocation } from 'react-router-dom';
 import { getMovies } from '../../services/MoviesApi';
+import HomeList from '../../components/HomeList/HomeList'
+
 
 const useFetchMovies = () => {
   const location = useLocation();
@@ -22,22 +24,15 @@ const useFetchMovies = () => {
   return { movies, location };
 };
 
-const HomePage = () => {
+const Home = () => {
   const { movies, location } = useFetchMovies();
-  console.log('HomePage', location);
   return (
     <main>
-      {/* <Link to="/" state={{ from: location }}></Link> */}
-      {/* <Link to={location?.state?.from ?? '/'}></Link> */}
       <ol>
-        {movies.map(movie => (
-          <li key={movie.id}>
-            <Link to={`/movies/${movie.id}`} state={{ from: location }}>{movie.title}</Link>
-          </li>
-        ))}
+        <HomeList movies={movies} location={location}/>
       </ol>
     </main>
   );
 };
 
-export default HomePage;
+export default Home;

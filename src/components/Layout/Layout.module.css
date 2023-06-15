@@ -1,0 +1,19 @@
+.layout {
+  display: flex;
+  border-bottom: 2px solid black;
+}
+
+.home {
+  margin-right: 10px;
+}
+
+.activeLink {
+  text-decoration: none;
+  color: black;
+
+
+}
+
+&.active {
+  color: tomato;
+}

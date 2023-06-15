@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+}
+
+.backdrop {
+  list-style: none;
+  margin-right: 15px;
+}
+
+.movie {
+  list-style: none;
+  padding-top: 100px;
+}
+
+.genres {
+  display: flex;
+}
+
+.genre {
+  margin-right: 10px;
+}
+
+.genresLink {
+  list-style: none;
+  text-decoration: none;
+  padding-bottom: 10px;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}

@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/892.63169c38.chunk.css","mappings":"AACA,0BACI,eACJ","sources":["components/CastActors/CastActors.module.css"],"sourcesContent":["\n.actors{\n    list-style: none;\n}"],"names":[],"sourceRoot":""}

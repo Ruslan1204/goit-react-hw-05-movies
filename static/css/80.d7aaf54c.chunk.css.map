@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/80.d7aaf54c.chunk.css","mappings":"AACA,wBACI,iBAAkB,CAClB,oBACJ","sources":["components/HomeList/HomeList.module.css"],"sourcesContent":["\n.movies{\n    margin-bottom: 5px;\n    text-decoration: none;\n}"],"names":[],"sourceRoot":""}

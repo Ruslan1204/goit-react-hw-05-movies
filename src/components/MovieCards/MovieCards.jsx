@@ -3,8 +3,7 @@ import css from './MovieCards.module.css';
 
 import PropTypes from 'prop-types';
 
-const MovieCards = ({ movie, movieId, location }) => {
-  console.log(location);
+const MovieCards = ({ movie, movieId }) => {
   return (
     <>
       {movie && (
@@ -41,7 +40,7 @@ const MovieCards = ({ movie, movieId, location }) => {
           </div>
         </ul>
       )}
-      {/* <div className={css.genresLink}>
+      <div className={css.genresLink}>
         <p>Additional infirmation</p>
         <li>
           <Link to={`/movies/${movieId}/cast`}>Cast</Link>
@@ -51,13 +50,14 @@ const MovieCards = ({ movie, movieId, location }) => {
         </li>
       </div>
 
-      <Outlet /> */}
+      <Outlet />
     </>
   );
 };
 
 export default MovieCards;
 
-// MovieCards.propTypes = {
-//   movie: PropTypes.array(PropTypes.object).isRequired,
-// };
+MovieCards.propTypes = {
+  movie: PropTypes.shape(PropTypes.array.isRequired),
+  movieId: PropTypes.string.isRequired,
+};

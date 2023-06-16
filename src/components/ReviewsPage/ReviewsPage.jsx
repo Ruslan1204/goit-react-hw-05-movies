@@ -18,6 +18,6 @@ const ReviewsPage = ({ reviews }) => {
 
 export default ReviewsPage;
 
-// ReviewsPage.propTypes = {
-//   reviews: PropTypes.array(PropTypes.object).isRequired,
-// };
+ReviewsPage.propTypes = {
+  reviews: PropTypes.array.isRequired,
+};

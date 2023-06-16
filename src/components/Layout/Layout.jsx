@@ -1,8 +1,8 @@
-import { NavLink, Outlet} from 'react-router-dom';
-import css from './Layout.module.css'
+import { NavLink, Outlet, useParams } from 'react-router-dom';
+import css from './Layout.module.css';
 
 const Layout = () => {
-
+  const { movieId } = useParams();
   return (
     <>
       <nav className={css.layout}>
@@ -13,6 +13,7 @@ const Layout = () => {
           <h2>Movies</h2>
         </NavLink>
       </nav>
+
       <Outlet />
     </>
   );

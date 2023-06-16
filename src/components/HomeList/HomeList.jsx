@@ -24,7 +24,7 @@ const HomeList = ({ movies, location }) => {
 
 export default HomeList;
 
-// HomeList.propTypes ={
-//   movies: PropTypes.array(PropTypes.object).isRequired,
-//   location:PropTypes.object.isRequired,
-// }
+HomeList.propTypes ={
+  movies: PropTypes.array.isRequired,
+  location:PropTypes.object.isRequired,
+}

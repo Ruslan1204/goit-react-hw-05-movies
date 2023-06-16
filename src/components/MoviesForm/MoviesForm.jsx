@@ -37,9 +37,9 @@ const MoviesForm = ({ movies, location, onSubmit, onChange }) => {
 
 export default MoviesForm;
 
-// MoviesForm.propTypes = {
-//   movies: PropTypes.array(PropTypes.object).isRequired,
-//   location: PropTypes.object.isRequired,
-//   onSubmit: PropTypes.func.isRequired,
-//   onChange: PropTypes.func.isRequired,
-// };
+MoviesForm.propTypes = {
+  movies: PropTypes.array.isRequired,
+  location: PropTypes.object.isRequired,
+  onSubmit: PropTypes.func.isRequired,
+  onChange: PropTypes.func.isRequired,
+};

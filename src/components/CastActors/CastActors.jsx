@@ -25,6 +25,6 @@ const CastActors = ({actors}) => {
 
 export default CastActors;
 
-// CastActors.propTypes ={
-//   actors: PropTypes.array(PropTypes.object).isRequired
-// }
+CastActors.propTypes ={
+  actors: PropTypes.array.isRequired
+}

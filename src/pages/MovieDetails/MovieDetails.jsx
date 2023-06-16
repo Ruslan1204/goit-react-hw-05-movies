@@ -20,7 +20,6 @@ const useFetchMovie = () => {
       try {
         const movie = await getMoviesById(movieId);
         setMovies(movie);
-        // console.log(movie.backdrop_path);
       } catch (error) {
         console.log(error);
       }
@@ -28,11 +27,6 @@ const useFetchMovie = () => {
 
     fetchMovie();
   }, [movieId, setMovies]);
-
-  // const fetchMovies = ()=>{
-  //   // console.log(movieId)
-  //   getMoviesById(movieId)
-  // }
 
   return { movie, movieId, location };
 };
@@ -43,8 +37,8 @@ const MovieDetails = () => {
   return (
     <main>
       <Link to={location?.state?.from ?? '/'}>Go Back</Link>
-      <MovieCards movie={movie} movieId={movieId} location={location}/>
-      <div className={css.genresLink}>
+      <MovieCards movie={movie} movieId={movieId} location={location} />
+      {/* <div className={css.genresLink}>
         <p>Additional infirmation</p>
         <li>
           <Link to={`/movies/${movieId}/cast`}>Cast</Link>
@@ -52,9 +46,9 @@ const MovieDetails = () => {
         <li>
           <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
         </li>
-      </div>
+      </div> */}
 
-      <Outlet />
+      {/* <Outlet /> */}
     </main>
   );
 };

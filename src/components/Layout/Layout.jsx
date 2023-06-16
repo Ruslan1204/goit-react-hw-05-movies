@@ -3,15 +3,30 @@ import { Suspense } from 'react';
 
 import css from './Layout.module.css';
 
+// const setActive=({ isActive, isPending }) => isPending ? "pending" : isActive ? "active" : "";
+// className={isActive =>"nav-link" + (!isActive ? " unselected" : "")}
+
 const Layout = () => {
   return (
     <>
       <header>
+        {/* <nav className={`${css.layout} ${css.links}`}>
+         */}
         <nav className={css.layout}>
-          <NavLink to="/" className={`${css.home} ${css.activeLink}`} exact>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? `${css.active}` : `${css.pending}`
+            }
+          >
             Home
           </NavLink>
-          <NavLink to="/movies" className={css.activeLink} exact>
+          <NavLink
+            to="/movies"
+            className={({ isActive }) =>
+              isActive ? `${css.active}` : `${css.pending}`
+            }
+          >
             Movies
           </NavLink>
         </nav>

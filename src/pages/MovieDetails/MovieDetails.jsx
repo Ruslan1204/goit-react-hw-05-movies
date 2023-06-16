@@ -35,21 +35,25 @@ const MovieDetails = () => {
   const { movie, movieId, location } = useFetchMovie();
 
   return (
-    <main>
+    <>
       <Link to={location?.state?.from ?? '/'}>Go Back</Link>
       <MovieCards movie={movie} movieId={movieId} location={location} />
-      {/* <div className={css.genresLink}>
+      <div className={css.genresLink}>
         <p>Additional infirmation</p>
         <li>
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
+          <Link to={`/movies/${movieId}/cast`} state={location.state}>
+            Cast
+          </Link>
         </li>
         <li>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
+          <Link to={`/movies/${movieId}/reviews`} state={location.state}>
+            Reviews
+          </Link>
         </li>
-      </div> */}
+      </div>
 
-      {/* <Outlet /> */}
-    </main>
+      <Outlet />
+    </>
   );
 };
 

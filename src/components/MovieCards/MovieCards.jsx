@@ -1,9 +1,9 @@
-import { Link, Outlet } from 'react-router-dom';
+
 import css from './MovieCards.module.css';
 
 import PropTypes from 'prop-types';
 
-const MovieCards = ({ movie, movieId }) => {
+const MovieCards = ({ movie}) => {
   return (
     <>
       {movie && (
@@ -40,17 +40,6 @@ const MovieCards = ({ movie, movieId }) => {
           </div>
         </ul>
       )}
-      <div className={css.genresLink}>
-        <p>Additional infirmation</p>
-        <li>
-          <Link to={`/movies/${movieId}/cast`}>Cast</Link>
-        </li>
-        <li>
-          <Link to={`/movies/${movieId}/reviews`}>Reviews</Link>
-        </li>
-      </div>
-
-      <Outlet />
     </>
   );
 };

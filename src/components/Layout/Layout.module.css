@@ -1,19 +1,21 @@
 .layout {
   display: flex;
-  border-bottom: 2px solid black;
+  
+    border-bottom: 2px solid black;
 }
 
 .home {
   margin-right: 10px;
+
 }
 
-.activeLink {
+.activeLink{
+  font-size: 25px;
   text-decoration: none;
   color: black;
-
-
 }
 
-&.active {
+/* .active{
   color: tomato;
-}
+} */
+

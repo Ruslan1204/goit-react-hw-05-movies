@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import {  useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { getMovies } from '../../services/MoviesApi';
-import HomeList from '../../components/HomeList/HomeList'
-
+import HomeList from '../../components/HomeList/HomeList';
 
 const useFetchMovies = () => {
   const location = useLocation();
@@ -26,13 +25,10 @@ const useFetchMovies = () => {
 
 const Home = () => {
   const { movies, location } = useFetchMovies();
-  console.log(location)
   return (
-    <main>
-      <ol>
-        <HomeList movies={movies} location={location}/>
-      </ol>
-    </main>
+    <ol>
+      <HomeList movies={movies} location={location} />
+    </ol>
   );
 };
 

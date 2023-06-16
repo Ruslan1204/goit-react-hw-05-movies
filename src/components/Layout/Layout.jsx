@@ -4,9 +4,6 @@ import { Suspense } from 'react';
 import css from './Layout.module.css';
 
 const Layout = () => {
-  
-//  const setActive = ({isActive}) => isActive ? css.active : '';
-
   return (
     <>
       <header>
@@ -14,7 +11,9 @@ const Layout = () => {
           <NavLink to="/" className={`${css.home} ${css.activeLink}`} exact>
             Home
           </NavLink>
-          <NavLink to="/movies" className={css.activeLink} exact>Movies</NavLink>
+          <NavLink to="/movies" className={css.activeLink} exact>
+            Movies
+          </NavLink>
         </nav>
       </header>
 

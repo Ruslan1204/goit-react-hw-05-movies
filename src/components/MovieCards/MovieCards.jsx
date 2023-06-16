@@ -1,9 +1,8 @@
-
 import css from './MovieCards.module.css';
 
 import PropTypes from 'prop-types';
 
-const MovieCards = ({ movie}) => {
+const MovieCards = ({ movie }) => {
   return (
     <>
       {movie && (
@@ -18,10 +17,13 @@ const MovieCards = ({ movie}) => {
             </li>
           </div>
           <div className={css.movie}>
-            <h2>{movie.title}</h2>
+            <h2>
+              {movie.title}
+            </h2>
             <li>
               <h3>User Score</h3>
-              <p>{movie.vote_average.toFixed(1)}%</p>
+              {/* <p>{movie.vote_average.toFixed(1)}%</p> */}
+              <p>{movie.popularity.toFixed()}%</p>
             </li>
             <li>
               <h3>Overview</h3>

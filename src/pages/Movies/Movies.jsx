@@ -40,13 +40,6 @@ const useFetchSearchMovies = () => {
 
     form.reset();
 
-    // if (nameSearch.trim() === '') {
-    //   return;
-    // }
-
-    // fetchSearchMovies(search);
-
-    // setSearch('');
   };
 
   return {

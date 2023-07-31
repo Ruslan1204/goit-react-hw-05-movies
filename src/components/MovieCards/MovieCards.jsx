@@ -17,9 +17,7 @@ const MovieCards = ({ movie }) => {
             </li>
           </div>
           <div className={css.movie}>
-            <h2>
-              {movie.title}
-            </h2>
+            <h2>{movie.title}</h2>
             <li>
               <h3>User Score</h3>
               {/* <p>{movie.vote_average.toFixed(1)}%</p> */}
